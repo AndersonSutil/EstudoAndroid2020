@@ -2,6 +2,7 @@ package com.example.estudoandroid2020;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper db;
     EditText e1,e2,e3;
-    Button b1;
+    Button b1,b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
         e2=(EditText)findViewById(R.id.pass);
         e3=(EditText)findViewById(R.id.cpass);
         b1=(Button)findViewById(R.id.register);
+
+        b2=(Button)findViewById(R.id.bt_login_register_screen);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent( MainActivity.this,ScreenLogin.class);
+                startActivity(i);
+            }
+        });
+
         b1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
